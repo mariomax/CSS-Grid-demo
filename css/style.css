@@ -103,6 +103,9 @@ body aside h6 {
 body section {
   padding: 2rem;
 }
+body section h3 {
+  padding-top: 2rem;
+}
 body section p {
   font-size: .8rem;
 }
