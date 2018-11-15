@@ -22,21 +22,26 @@ strong {
 body {
   font-size: 16px;
 }
-nav {
+body nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
   background: #2A4E65;
 }
-nav a {
+body nav a {
   color: #FFF;
   padding: .5rem 2rem;
   text-decoration: none;
 }
-header {
+body h2 {
+  color: #2A4E65;
+  font-size: 1.6rem;
+  padding: .5rem 0;
+}
+body header {
   position: relative;
 }
-header h3 {
+body header h3 {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -49,36 +54,30 @@ header h3 {
   align-items: center;
   text-align: center;
   color: #FFF;
-  font-size: 4rem;
+  font-size: 2.2rem;
 }
-header img {
+body header img {
   max-width: 100%;
 }
-main {
+body main {
   background: #FFF;
 }
-main h1 {
+body main h1 {
   font-size: 1.8rem;
   padding: 1rem;
   text-align: center;
 }
-main h2 {
-  color: #774222;
-  font-size: 1.6rem;
-  padding: .5rem;
-  text-align: center;
+body main h3 {
+  font-size: 1.2rem;
 }
-main h3 {
-  font-size: 1.5rem;
-}
-main h4 {
+body main h4 {
   font-size: 1.25rem;
 }
-main p {
+body main p {
   padding: 1rem;
   line-height: 1.2;
 }
-main blockquote {
+body main blockquote {
   border-left: 3px solid #2A4E65;
   font-style: italic;
   font-size: 1.3rem;
@@ -86,37 +85,58 @@ main blockquote {
   margin: .5rem 2rem;
   padding: .7rem 1rem;
 }
-aside {
+body aside {
   background: #F3F3F3;
   padding: 2rem;
 }
-aside h2 {
-  color: #2A4E65;
-  font-size: 1.6rem;
-  padding: .5rem 0;
-}
-aside img {
+body aside img {
   margin: .8rem auto;
   width: 100%;
 }
-aside h6 {
+body aside h6 {
   font-family: 'Frank Ruhl Libre', serif;
   font-size: .7rem;
   font-style: italic;
   padding-bottom: 1rem;
   text-align: center;
 }
-footer {
+body section {
+  padding: 2rem;
+}
+body section p {
+  font-size: .8rem;
+}
+body section .left-ball {
+  float: left;
+  shape-outside: circle(50%);
+  shape-margin: 1px;
+  width: 11rem;
+}
+body section .right-ball {
+  float: left;
+  shape-outside: url(../images/bowling-diamond.png);
+  shape-margin: 5px;
+  shape-image-threshold: 0.7;
+  width: 10rem;
+}
+body section .mush-ball {
+  float: left;
+  shape-outside: url(../images/bowling-splat.png);
+  shape-margin: 3px;
+  shape-image-threshold: 0.7;
+  width: 10rem;
+}
+body footer {
   display: flex;
   justify-content: space-around;
   align-items: center;
   background-color: #090909;
 }
-footer p {
+body footer p {
   color: #F3F3F3;
   padding: .5rem;
 }
-footer a {
+body footer a {
   color: #FFF;
   font-family: 'Frank Ruhl Libre', serif;
   padding: .5rem;
@@ -126,8 +146,8 @@ footer a {
   .container {
     display: grid;
     grid-template-columns: 100px 2fr 1fr;
-    grid-template-rows: 100px 1fr 60px;
-    grid-template-areas: "hero hero hero" "nav main side" "foot foot foot";
+    grid-template-rows: 100px 1fr 1fr 60px;
+    grid-template-areas: "hero hero hero" "nav main side" "section section section" "foot foot foot";
   }
   nav {
     grid-area: nav;
@@ -148,6 +168,11 @@ footer a {
   aside {
     grid-area: side;
     line-height: 1.5;
+  }
+  section {
+    grid-area: section;
+    margin: 0 auto;
+    max-width: 80%;
   }
   footer {
     grid-area: foot;
